@@ -10,7 +10,7 @@ PORT = dict(
 OPTIONS = ()
 
 ORG = 'pthu'
-REPO = 'patristics'
+REPO = 'athenaeus'
 CORPUS = 'The Deipnosophistae by Athenaeus'
 VERSION = '1.0'
 RELATIVE = 'Athenaeus/Deipnosophistae/tf'
