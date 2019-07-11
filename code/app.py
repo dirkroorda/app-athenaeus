@@ -5,7 +5,7 @@ from tf.applib.highlight import hlText, hlRep
 from tf.applib.api import setupApi
 from tf.applib.links import outLink
 
-SECTION = {'_book', 'book', 'chapter'}
+SECTION = {'book', 'chapter', '_sentence'}
 SLOT = 'word'
 
 
@@ -18,7 +18,7 @@ class TfApp(object):
     api = app.api
     T = api.T
 
-    (_book, book, chapter) = T.sectionFromNode(n, fillup=True)
+    (book, chapter, _sentence) = T.sectionFromNode(n, fillup=True)
     passageText = app.sectionStrFromNode(n)
     href = '#' if _noUrl else app.docUrl
     if text is None:
@@ -71,7 +71,7 @@ class TfApp(object):
     text = ''
     if nType == SLOT:
       text = hlText(app, [n], d.highlights, fmt=d.fmt)
-    elif nType in {'chapter'}:
+    elif nType in {'_sentence'}:
       text = hlText(app, L.d(n, otype=SLOT), d.highlights, fmt=d.fmt)
     elif nType in SECTION:
       if secLabel and d.withPassage:
@@ -79,8 +79,8 @@ class TfApp(object):
         sep2 = app.sectionSep2
         label = (
             '{}'
-            if nType == '_book' else
-            f'{{}}{sep1}{{}}' if nType == 'book' else
+            if nType == 'book' else
+            f'{{}}{sep1}{{}}' if nType == 'chapter' else
             f'{{}}{sep1}{{}}{sep2}{{}}'
         )
         rep = label.format(*T.sectionFromNode(n))
@@ -90,12 +90,12 @@ class TfApp(object):
           rep = app.webLink(n, text=f'{rep}&nbsp;', _asString=True)
       else:
         rep = ''
-      if nType == 'chapter':
+      if nType == '_sentence':
+        rep += mdhtmlEsc(f'{nType} {F._sentence.v(n)}') if secLabel else ''
+      elif nType == 'chapter':
         rep += mdhtmlEsc(f'{nType} {F.chapter.v(n)}') if secLabel else ''
       elif nType == 'book':
         rep += mdhtmlEsc(f'{nType} {F.book.v(n)}') if secLabel else ''
-      elif nType == '_book':
-        rep += mdhtmlEsc(f'{nType} {F._book.v(n)}') if secLabel else ''
       rep = hlRep(app, rep, n, d.highlights)
       if text:
         text = hlRep(app, text, n, d.highlights)
@@ -182,7 +182,7 @@ class TfApp(object):
     elif nType == 'book':
       children = L.d(n, otype='chapter')
     elif nType == 'chapter':
-      children = L.d(n, otype='p')
+      children = L.d(n, otype='_sentence')
     elif nType == 'p':
       children = L.d(n, otype='_sentence')
     else:

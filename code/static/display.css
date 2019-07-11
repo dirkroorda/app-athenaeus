@@ -82,11 +82,11 @@
 }
 .children.p {
     align-items: stretch;
-    flex-flow: row nowrap;
+    flex-flow: row wrap;
 }
 .children._sentence {
     align-items: stretch;
-    flex-flow: row nowrap;
+    flex-flow: row wrap;
 }
 .children.word {
     flex-flow: column nowrap;
@@ -120,11 +120,11 @@
     border-color: #0088bb;
 }
 .contnr.p {
-    flex-flow: row nowrap;
+    flex-flow: row wrap;
     border-color: #44bbff;
 }
 .contnr._sentence {
-    flex-flow: row nowrap;
+    flex-flow: row wrap;
     border-color: #44bbff;
 }
 .contnr.word {
