@@ -12,7 +12,7 @@ OPTIONS = ()
 ORG = 'pthu'
 REPO = 'athenaeus'
 CORPUS = 'The Deipnosophistae by Athenaeus'
-VERSION = '1.0'
+VERSION = '1.1'
 RELATIVE = 'Athenaeus/Deipnosophistae/tf'
 
 DOI_TEXT = '10.5281/zenodo.nnn'
