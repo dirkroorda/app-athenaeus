@@ -35,7 +35,7 @@ It offers this [API](https://annotation.github.io/text-fabric/Api/App/).
 
 # Readme template
 
-[![sha](sha.png) Software Heritage Archive](https://archive.softwareheritage.org/browse/origin/https://github.com/annotation/app-athenaeus/)
+[![SWH](https://archive.softwareheritage.org/badge/origin/https://github.com/annotation/app-athenaeus/)](https://archive.softwareheritage.org/browse/origin/https://github.com/annotation/app-athenaeus/)
 
 [![DOI](https://zenodo.org/badge/nnn.svg)](https://zenodo.org/badge/latestdoi/nnn)
 
