@@ -1,10 +1,10 @@
 from os.path import dirname, abspath
 
+API_VERSION = 1
+
 PROTOCOL = "http://"
 HOST = "localhost"
-PORT = dict(kernel=19610, web=9610,)
-
-OPTIONS = ()
+PORT = dict(kernel=19610, web=9610)
 
 ORG = "pthu"
 REPO = "athenaeus"
@@ -29,7 +29,8 @@ MODULE_SPECS = ()
 
 ZIP = [REPO]
 
-CONDENSE_TYPE = "chapter"
+BASE_TYPE = "word"
+CONDENSE_TYPE = "_sentence"
 
 NONE_VALUES = {None}
 
@@ -45,12 +46,8 @@ EXAMPLE_SECTION_TEXT = "Deipnosophistae 1:1"
 SECTION_SEP1 = " "
 SECTION_SEP2 = ":"
 
-DEFAULT_CLS = "txtn"
-DEFAULT_CLS_ORIG = "txtp"
-
-FORMAT_CSS = dict(full="txtp", plain="txtp",)
-
-CLASS_NAMES = None
+WRITING = ""
+WRITING_DIR = "ltr"
 
 FONT_NAME = "Gentium"
 FONT = "GentiumPlus-R.ttf"
@@ -64,6 +61,46 @@ TEXT_FORMATS = {}
 
 BROWSE_NAV_LEVEL = 2
 BROWSE_CONTENT_PRETTY = False
+
+VERSES = None
+
+LEX = None
+
+TRANSFORM = None
+
+CHILD_TYPE = dict(
+    _book="book", book="chapter", chapter="_sentence", p="_sentence", _sentence="word"
+)
+
+SUPER_TYPE = None
+
+PLAIN_TYPES = None
+
+PRETTY_TYPES = dict(
+    book=("{_book}", "author", ""),
+    chapter=("{chapter}", "", ""),
+    _sentence=("{_sentence}", "", ""),
+    _book=("{_book}", "", ""),
+    p=("{p}", "", ""),
+    word=(True, "", ""),
+)
+
+LEVELS = dict(
+    book=dict(level=3, flow="col", wrap=False, stretch=False),
+    chapter=dict(level=3, flow="col", wrap=False, strectch=False),
+    _sentence=dict(level=2, flow="row", wrap=True, strectch=True),
+    _book=dict(level=3, flow="col", wrap=False, stretch=False),
+    p=dict(level=1, flow="col", wrap=False, strectch=False),
+    word=dict(level=0, flow="col", wrap=False, strectch=False),
+)
+
+INTERFACE_DEFAULTS = dict(
+    withTypes=True,
+    withNodes=False,
+    showFeatures=True,
+    lineNumbers=None,
+    graphics=None,
+)
 
 
 def deliver():
