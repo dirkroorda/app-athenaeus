@@ -46,7 +46,7 @@ EXAMPLE_SECTION_TEXT = "Deipnosophistae 1:1"
 SECTION_SEP1 = " "
 SECTION_SEP2 = ":"
 
-WRITING = ""
+WRITING = "grc"
 WRITING_DIR = "ltr"
 
 FONT_NAME = "Gentium"
@@ -62,7 +62,7 @@ TEXT_FORMATS = {}
 BROWSE_NAV_LEVEL = 2
 BROWSE_CONTENT_PRETTY = False
 
-VERSES = None
+VERSE_TYPES = None
 
 LEX = None
 
@@ -94,13 +94,7 @@ LEVELS = dict(
     word=dict(level=0, flow="col", wrap=False, strectch=False),
 )
 
-INTERFACE_DEFAULTS = dict(
-    withTypes=True,
-    withNodes=False,
-    showFeatures=True,
-    lineNumbers=None,
-    graphics=None,
-)
+INTERFACE_DEFAULTS = dict()
 
 
 def deliver():
