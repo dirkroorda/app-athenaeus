@@ -74,24 +74,43 @@ CHILD_TYPE = dict(
 
 SUPER_TYPE = None
 
-PLAIN_TYPES = None
-
-PRETTY_TYPES = dict(
-    book=("{_book}", "author", ""),
-    chapter=("{chapter}", "", ""),
-    _sentence=("{_sentence}", "", ""),
-    _book=("{_book}", "", ""),
-    p=("{p}", "", ""),
-    word=(True, "", ""),
-)
-
-LEVELS = dict(
-    book=dict(level=3, flow="col", wrap=False, stretch=False),
-    chapter=dict(level=3, flow="col", wrap=False, strectch=False),
-    _sentence=dict(level=2, flow="row", wrap=True, strectch=True),
-    _book=dict(level=3, flow="col", wrap=False, stretch=False),
-    p=dict(level=1, flow="col", wrap=False, strectch=False),
-    word=dict(level=0, flow="col", wrap=False, strectch=False),
+TYPE_DISPLAY = dict(
+    book=dict(
+        template="{book}",
+        bareFeatures="author",
+        features="",
+        level=3, flow="col", wrap=False, stretch=False
+    ),
+    chapter=dict(
+        template="{chapter}",
+        bareFeatures="",
+        features="",
+        level=3, flow="col", wrap=False, strectch=False,
+    ),
+    _sentence=dict(
+        template="{_sentence}",
+        bareFeatures="",
+        features="",
+        level=2, flow="row", wrap=True, strectch=True,
+    ),
+    _book=dict(
+        template="{_book}",
+        bareFeatures="",
+        features="",
+        level=3, flow="col", wrap=False, stretch=False,
+    ),
+    p=dict(
+        template="{p}",
+        bareFeatures="",
+        features="",
+        level=1, flow="col", wrap=False, strectch=False,
+    ),
+    word=dict(
+        template=True,
+        bareFeatures="",
+        features="",
+        level=0, flow="col", wrap=False, strectch=False,
+    ),
 )
 
 INTERFACE_DEFAULTS = dict()
