@@ -29,87 +29,73 @@ MODULE_SPECS = ()
 
 ZIP = [REPO]
 
-BASE_TYPE = "word"
-CONDENSE_TYPE = "_sentence"
-
-NONE_VALUES = {None}
-
-STANDARD_FEATURES = None  # meaning all loadable features
-
-EXCLUDED_FEATURES = set()
-
-NO_DESCEND_TYPES = {"lemma"}
-
 EXAMPLE_SECTION = "<code>Deipnosophistae 1:1</code>"
 EXAMPLE_SECTION_TEXT = "Deipnosophistae 1:1"
 
-SECTION_SEP1 = " "
-SECTION_SEP2 = ":"
-
-WRITING = "grc"
-WRITING_DIR = "ltr"
-
-FONT_NAME = "Gentium"
-FONT = "GentiumPlus-R.ttf"
-FONTW = "GentiumPlus-R.woff"
-
-TEXT_FORMATS = {
-    "layout-orig-full": "layoutRich",
-}
-TEXT_FORMATS = {}
-
-
-BROWSE_NAV_LEVEL = 2
-BROWSE_CONTENT_PRETTY = False
-
-VERSE_TYPES = None
-
-LEX = None
-
-TRANSFORM = None
-
-CHILD_TYPE = dict(
-    _book="book", book="chapter", chapter="_sentence", p="_sentence", _sentence="word"
+DATA_DISPLAY = dict(
+    noneValues={None},
+    sectionSep1=" ",
+    sectionSep2=":",
+    writing="grc",
+    writingDir="ltr",
+    fontName="Gentium",
+    font="GentiumPlus-R.ttf",
+    fontw="GentiumPlus-R.woff",
+    textFormats={},
+    browseNavLevel=2,
+    browseContentPretty=False,
 )
-
-SUPER_TYPE = None
 
 TYPE_DISPLAY = dict(
     book=dict(
         template="{book}",
-        bareFeatures="author",
-        features="",
-        level=3, flow="col", wrap=False, stretch=False
+        featuresBare="author",
+        children="chapter",
+        level=3,
+        flow="col",
+        wrap=False,
+        stretch=False,
     ),
     chapter=dict(
         template="{chapter}",
-        bareFeatures="",
-        features="",
-        level=3, flow="col", wrap=False, strectch=False,
+        children="_sentence",
+        level=3,
+        flow="col",
+        wrap=False,
+        strectch=False,
     ),
     _sentence=dict(
         template="{_sentence}",
-        bareFeatures="",
-        features="",
-        level=2, flow="row", wrap=True, strectch=True,
+        children="word",
+        condense=True,
+        level=2,
+        flow="row",
+        wrap=True,
+        strectch=True,
     ),
     _book=dict(
         template="{_book}",
-        bareFeatures="",
-        features="",
-        level=3, flow="col", wrap=False, stretch=False,
+        children="book",
+        level=3,
+        flow="col",
+        wrap=False,
+        stretch=False,
     ),
     p=dict(
         template="{p}",
-        bareFeatures="",
-        features="",
-        level=1, flow="col", wrap=False, strectch=False,
+        children="_sentence",
+        level=1,
+        flow="col",
+        wrap=False,
+        strectch=False,
     ),
     word=dict(
         template=True,
-        bareFeatures="",
-        features="",
-        level=0, flow="col", wrap=False, strectch=False,
+        base=True,
+        level=0,
+        flow="col",
+        wrap=False,
+        strectch=False,
     ),
 )
 
