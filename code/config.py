@@ -32,71 +32,12 @@ ZIP = [REPO]
 EXAMPLE_SECTION = "<code>Deipnosophistae 1:1</code>"
 EXAMPLE_SECTION_TEXT = "Deipnosophistae 1:1"
 
-DATA_DISPLAY = dict(
-    noneValues={None},
-    sectionSep1=" ",
-    sectionSep2=":",
-    writing="grc",
-    writingDir="ltr",
-    fontName="Gentium",
-    font="GentiumPlus-R.ttf",
-    fontw="GentiumPlus-R.woff",
-    textFormats={},
-    browseNavLevel=2,
-    browseContentPretty=False,
-)
+DATA_DISPLAY = dict(writing="grc",)
 
 TYPE_DISPLAY = dict(
-    book=dict(
-        template="{book}",
-        featuresBare="author",
-        children="chapter",
-        level=3,
-        flow="col",
-        wrap=False,
-        stretch=False,
-    ),
-    chapter=dict(
-        template="{chapter}",
-        children="_sentence",
-        level=3,
-        flow="col",
-        wrap=False,
-        strectch=False,
-    ),
-    _sentence=dict(
-        template="{_sentence}",
-        children="word",
-        condense=True,
-        level=2,
-        flow="row",
-        wrap=True,
-        strectch=True,
-    ),
-    _book=dict(
-        template="{_book}",
-        children="book",
-        level=3,
-        flow="col",
-        wrap=False,
-        stretch=False,
-    ),
-    p=dict(
-        template="{p}",
-        children="_sentence",
-        level=1,
-        flow="col",
-        wrap=False,
-        strectch=False,
-    ),
-    word=dict(
-        template=True,
-        base=True,
-        level=0,
-        flow="col",
-        wrap=False,
-        strectch=False,
-    ),
+    book=dict(featuresBare="author",),
+    _book=dict(children="book",),
+    p=dict(template="{p}", children="_sentence",),
 )
 
 INTERFACE_DEFAULTS = dict()
