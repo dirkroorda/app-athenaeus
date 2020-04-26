@@ -1,0 +1,19 @@
+apiVersion: 1
+dataDisplay:
+  writing: grc
+docs: {}
+interfaceDefaults: {}
+provenanceSpec:
+  corpus: The Deipnosophistae by Athenaeus
+  org: pthu
+  relative: Athenaeus/Deipnosophistae/tf
+  repo: athenaeus
+  version: '1.1'
+typeDisplay:
+  _book:
+    children: book
+  book:
+    featuresBare: author
+  p:
+    children: _sentence
+    template: '{p}'
