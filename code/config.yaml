@@ -1,6 +1,5 @@
 apiVersion: 1
-dataDisplay:
-  writing: grc
+dataDisplay: {}
 docs: {}
 interfaceDefaults: {}
 provenanceSpec:
@@ -17,3 +16,4 @@ typeDisplay:
   p:
     children: _sentence
     template: '{p}'
+writing: grc
