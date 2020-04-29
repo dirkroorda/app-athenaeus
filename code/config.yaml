@@ -11,9 +11,9 @@ provenanceSpec:
 typeDisplay:
   _book:
     children: book
-  book:
-    featuresBare: author
   p:
     children: _sentence
-    template: '{p}'
+    label: '{p}'
+  word:
+    featuresBare: beta_plain
 writing: grc
