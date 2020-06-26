@@ -8,7 +8,7 @@
 
 [![SWH](https://archive.softwareheritage.org/badge/origin/https://github.com/annotation/app-athenaeus/)](https://archive.softwareheritage.org/browse/origin/https://github.com/annotation/app-athenaeus/)
 
-[![DOI](https://zenodo.org/badge/nnn.svg)](https://zenodo.org/badge/latestdoi/nnn)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3909539.svg)](https://doi.org/10.5281/zenodo.3909539)
 
 ## Name of the corpus
 
