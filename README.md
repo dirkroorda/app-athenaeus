@@ -7,8 +7,8 @@
 # Readme template
 
 [![SWH](https://archive.softwareheritage.org/badge/origin/https://github.com/annotation/app-athenaeus/)](https://archive.softwareheritage.org/browse/origin/https://github.com/annotation/app-athenaeus/)
-
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3909539.svg)](https://doi.org/10.5281/zenodo.3909539)
+[![Project Status: WIP – Initial development is in progress, but there has not yet been a stable, usable release suitable for the public.](https://www.repostatus.org/badges/latest/wip.svg)](https://www.repostatus.org/#wip)
 
 ## Name of the corpus
 
@@ -28,4 +28,9 @@ For a description of the features, see
 [feature documentation](https://github.com/pthu/athenaeus/blob/master/docs/transcription.md).
 
 ![shot](images/shot.png)
+
+# Author
+
+[Dirk Roorda](https://github.com/dirkroorda)
+
 
